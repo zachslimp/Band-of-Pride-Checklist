@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What your band student needs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#141414; --muted:#5b5b5b; --line:#d9d6cf; --accent:#9a6a00; --accent-bg:#fbefd0; --on-ink:#ffffff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#121212;--surface:#1c1c1c;--ink:#f2f0ea;--muted:#a9a69e;--line:#363532;--accent:#e8b84a;--accent-bg:#2c2412;--on-ink:#121212}
+}
+:root[data-theme="dark"]{--bg:#121212;--surface:#1c1c1c;--ink:#f2f0ea;--muted:#a9a69e;--line:#363532;--accent:#e8b84a;--accent-bg:#2c2412;--on-ink:#121212}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Public Sans",system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:40px 20px 72px}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700;line-height:1.05;margin:0}
+h1{font-size:clamp(2.6rem,9vw,4.4rem);letter-spacing:-.01em}
+.lead{color:var(--muted);margin:14px 0 36px;max-width:46ch}
+h2{font-size:1.6rem;margin:0 0 12px}
+.group{margin-bottom:22px}
+.group h3{font-size:1.15rem;color:var(--muted);margin-bottom:8px;font-weight:600}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.tile{display:block;padding:12px 14px;border:2px solid var(--ink);background:var(--surface);color:var(--ink);text-decoration:none;font-weight:600;border-radius:4px;min-height:48px}
+.tile:hover{background:var(--accent-bg)}
+.tile[aria-current="true"]{background:var(--ink);color:var(--on-ink)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+#list{margin-top:44px;scroll-margin-top:16px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;border-bottom:4px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+.head h2{font-size:clamp(1.9rem,6vw,2.6rem);margin:0}
+.count{color:var(--muted);font-size:.95rem}
+.due{font-family:"Barlow Condensed",sans-serif;font-size:1.35rem;font-weight:700;color:var(--accent);margin:26px 0 4px}
+.item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.name{font-weight:600}
+.note{color:var(--muted);font-size:.95rem;margin:2px 0 0}
+.link{display:inline-block;margin-top:6px;font-weight:600;color:var(--ink)}
+details{margin-top:8px;font-size:.95rem}
+summary{cursor:pointer;font-weight:600}
+details p{margin:8px 0 0;color:var(--muted)}
+.tools{margin-top:28px}
+button{font:inherit;font-weight:600;padding:10px 16px;border:2px solid var(--ink);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer}
+.empty{color:var(--muted)}
+[hidden]{display:none!important}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 26px}
+.tabs a{padding:8px 14px;border:2px solid var(--ink);border-radius:4px;color:var(--ink);background:var(--surface);text-decoration:none;font-weight:600}
+.tabs a[aria-current="page"]{background:var(--ink);color:var(--on-ink)}
+.credit{margin-top:32px;font-size:.9rem;color:var(--muted)}
+.credit a{color:var(--ink)}
+@media print{.picker,.tools,.tabs{display:none}main{padding:0}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<main>
+  <h1>White House High School Band of Pride Checklist</h1>
+  <nav class="tabs" aria-label="Pages"><a href="#" id="t-req">Required items</a><a href="#camp" id="t-camp">Optional for band camp</a></nav>
+  <p class="lead" id="lead">Choose your student’s instrument or color guard to see the list made just for them.</p>
+
+  <div class="picker" id="picker"></div>
+
+  <section id="list" aria-live="polite"></section>
+
+  <section id="camp" hidden>
+    <div class="head"><h2>Optional for band camp</h2></div>
+    <p class="note" style="margin-top:12px">These are suggestions, not requirements. Everything your student needs for band is on the Required items page.</p>
+
+    <div class="due">Sun and heat</div>
+    <div class="item"><div><div class="name">Hat or cap</div><p class="note">A wide brim keeps sun out of the eyes. One that also shades the neck is even better.</p></div></div>
+    <div class="item"><div><div class="name">Sunglasses</div><p class="note">They help students stay focused and protect their eyes from UV rays.</p></div></div>
+    <div class="item"><div><div class="name">Sunscreen</div><p class="note">SPF 30 or higher, labeled broad spectrum, with enough to reapply through the day.</p></div></div>
+    <div class="item"><div><div class="name">Water bottle</div><p class="note">An insulated, refillable bottle works best. Students should sip all day, not wait until they feel thirsty.</p></div></div>
+    <div class="item"><div><div class="name">Insect repellent</div><p class="note">Only needed if bugs are a problem where camp is held.</p></div></div>
+
+    <div class="due">Camp supplies</div>
+    <div class="item"><div><div class="name">Pencils</div><p class="note">Bring two or more. Students will write things down, and friends often forget theirs.</p></div></div>
+    <div class="item"><div><div class="name">Extra flip folder pages</div><p class="note">A standard flip folder comes with 5 pages, and each holds two sheets of music. Extra pages help if your student has more than 10 sheets.</p></div></div>
+
+    <p class="credit">Adapted from <a href="http://blog.kincaidsmusic.com/marching-band-camp-checklist/" target="_blank" rel="noopener">Kincaid’s marching band camp checklist</a>.</p>
+  </section>
+</main>
+
+<script>
+var L = {
+  shoe: "https://www.bandshoppe.com/product/dinkles-glide-marching-band-shoe/?attribute_pa_color=black&attribute_pa_shoe-size=mens-4h-womens-6h&gad_source=1&gad_campaignid=18402394497&gbraid=0AAAAACANwpHhLmTvl6w8Npg0TWsGOQ-2J&gclid=Cj0KCQiAwdDXBhDuARIsAFdLukliwlZ5BPrNL1FMuu7UzqM0kzRpkuh9-qofitarKqgvBYIFF-JJZkMaAgUHEALw_wcB",
+  bib: "https://www.bandshoppe.com/product/economy-marching-band-bibbers/",
+  flip: "https://www.sweetwater.com/store/detail/GTTR9400--trophy-tr9400-flip-folder-5-windows-10-pockets",
+  dress: "https://sepapparel.com/corelli-concert-choir-dress.html",
+  clar: "https://www.sweetwater.com/store/detail/GTTR9506N--band-stand-gttr9506n-clarinet-lyre-with-ring-nickel",
+  bclar: "https://www.bandlandmusic.com/p-250-bass-clarinet-lyre.aspx",
+  sax: "https://www.sweetwater.com/store/detail/YAC1515G--yamaha-yac-1515g-saxophone-lyre-lacquered-brass",
+  drum: "https://www.sweetwater.com/store/detail/YAC1522--yamaha-yac-1522-marching-drum-lyre",
+  fluteflip: "https://www.sweetwater.com/store/detail/DEGLyFltPc--deg-flute-or-piccolo-lyre",
+  tbflip: "https://www.sweetwater.com/store/detail/DEGTbnLyBell--deg-hc250-clamp-on-trombone-lyre-bell?_queryID=098c4dbbb5a15228d3cc11c44cd1e3ac&_index=production_products"
+};
+var OWN = "Most students rent or own their own. The school may have a few in varying condition for students who need one.";
+var SCHOOL = "The school has several, and most students rent the school-owned instrument.";
+
+var GROUPS = [
+  {name: "Woodwinds", list: [
+    {id: "flute", name: "Flute / Piccolo", inst: OWN, flip: L.fluteflip},
+    {id: "clarinet", name: "Clarinet", inst: OWN, lyre: L.clar},
+    {id: "bassclarinet", name: "Bass clarinet", inst: OWN, lyre: L.bclar},
+    {id: "altosax", name: "Alto sax", inst: OWN, lyre: L.sax},
+    {id: "tenorsax", name: "Tenor sax", inst: OWN, lyre: L.sax},
+    {id: "barisax", name: "Bari sax", inst: OWN, lyre: L.sax}]},
+  {name: "Brass", list: [
+    {id: "trumpet", name: "Trumpet", inst: OWN, flip: L.tbflip},
+    {id: "trombone", name: "Trombone", inst: OWN, flip: L.tbflip},
+    {id: "mellophone", name: "French horn / Mellophone", inst: SCHOOL, flip: L.tbflip},
+    {id: "baritone", name: "Baritone", inst: SCHOOL + " This covers both marching and concert.", flip: L.tbflip},
+    {id: "tuba", name: "Tuba / Sousaphone", inst: SCHOOL}]},
+  {name: "Percussion", list: [
+    {id: "drumline", name: "Drumline", inst: "The school provides all large equipment.", lyre: L.drum, sticks: true},
+    {id: "cymbals", name: "Cymbals", inst: "The school provides all large equipment.", flip: L.fluteflip}]},
+  {name: "Color guard", list: [
+    {id: "guard", name: "Color guard", guard: true}]}
+];
+
+var REEDS = ["clarinet", "bassclarinet", "altosax", "tenorsax", "barisax"];
+var BRASS = ["trumpet", "trombone", "mellophone", "baritone", "tuba"];
+var DUES = ["By Sept 1", "By band camp", "By Nov 1", "Date to be announced"];
+
+function itemsFor(i) {
+  var socks = {id: "socks", t: "Long black socks", note: "Any long black socks are fine.", due: 0};
+  var shirt = {id: "shirt", t: "White compression tank top", note: "It must be a white tank top.", due: 0};
+  var shorts = {id: "shorts", t: "Black athletic shorts", note: "Any black athletic shorts, an appropriate length.", due: 1};
+  if (i.guard) {
+    return [socks, shirt, shorts,
+      {id: "gloves", t: "DSI Ever-Dri Guard gloves", due: 3},
+      {id: "bag", t: "Flag equipment bag", due: 3},
+      {id: "gshoes", t: "Guard shoes", due: 3}];
+  }
+  var out = [
+    {id: "shoes", t: "Black marching shoes", note: "Dinkles are preferred, but any black marching shoes work.", link: L.shoe, lt: "Shop at Band Shoppe", due: 0},
+    {id: "bibbers", t: "Bibbers", link: L.bib, lt: "Shop at Band Shoppe", due: 0},
+    socks, shirt, shorts,
+    {id: "inst", t: "Instrument", note: i.inst, due: 1},
+    {id: "flip", t: "Flip folder", note: "A flip folder holds the music on the field.", link: i.flip || L.flip, lt: "See the flip folder", due: 1}
+  ];
+  if (i.lyre) out.push({id: "lyre", t: "Lyre", note: "The lyre clips onto the instrument to hold the flip folder.", link: i.lyre, lt: "See the lyre", due: 1});
+  if (i.sticks) out.push({id: "sticks", t: "Sticks", note: "Please bring sticks that suit your student’s instrument.", due: 1});
+  if (REEDS.indexOf(i.id) > -1) out.push({id: "reeds", t: "Extra reeds", note: "Keep spare reeds on hand so a broken reed never keeps your student from playing.", due: 1});
+  if (BRASS.indexOf(i.id) > -1) out.push({id: "mouthpiece", t: "Mouthpiece", note: "We encourage all brass players to have their own personal mouthpiece. Feel free to discuss the model or brand with a director. Rented instruments already come with one.", due: 1});
+  out.push({id: "concert", t: "Concert attire", due: 2,
+    more: [
+      "Feminine attire: full-length black that reaches the ankles. A dress, or a shirt and pants, both work. A specific dress was required in past years, but it is no longer required. If you like, you can still find it " + "<a href=\"" + L.dress + "\" target=\"_blank\" rel=\"noopener\">here</a>.",
+      "Masculine attire: the school provides a suit jacket and bow tie. Please wear a white button-down shirt, black pants, and black shoes. A jacket or bow tie you already own is welcome."]});
+  return out;
+}
+
+var all = {};
+GROUPS.forEach(function (g) { g.list.forEach(function (i) { all[i.id] = i; }); });
+
+
+function renderPicker(cur) {
+  var h = "";
+  GROUPS.forEach(function (g) {
+    h += "<div class=\"group\"><h3>" + g.name + "</h3><div class=\"tiles\">";
+    g.list.forEach(function (i) {
+      h += "<a class=\"tile\" href=\"#" + i.id + "\"" + (i.id === cur ? " aria-current=\"true\"" : "") + ">" + i.name + "</a>";
+    });
+    h += "</div></div>";
+  });
+  document.getElementById("picker").innerHTML = h;
+}
+
+function renderList(cur) {
+  var el = document.getElementById("list");
+  var i = all[cur];
+  if (!i) { el.innerHTML = ""; return; }
+  var items = itemsFor(i);
+  var h = "<div class=\"head\"><h2>What you’ll need for " + i.name + "</h2></div>";
+  [1, 0, 2, 3].forEach(function (di) {
+    var d = DUES[di];
+    var grp = items.filter(function (x) { return x.due === di; });
+    if (!grp.length) return;
+    h += "<div class=\"due\">" + d + "</div>";
+    grp.forEach(function (x) {
+      h += "<div class=\"item\"><div><div class=\"name\">" + x.t + "</div>";
+      if (x.note) h += "<p class=\"note\">" + x.note + "</p>";
+      if (x.link) h += "<a class=\"link\" href=\"" + x.link + "\" target=\"_blank\" rel=\"noopener\">" + x.lt + "</a>";
+      if (x.more) h += x.more.map(function (m) { return "<p class=\"note\">" + m + "</p>"; }).join("");
+      h += "</div></div>";
+    });
+  });
+  h += "<div class=\"tools\"><button type=\"button\" id=\"print\">Print this list</button></div>";
+  el.innerHTML = h;
+  document.getElementById("print").onclick = function () { window.print(); };
+}
+
+function route() {
+  var h = location.hash.slice(1);
+  var camp = h === "camp";
+  var cur = all[h] ? h : "";
+  document.getElementById("camp").hidden = !camp;
+  document.getElementById("picker").hidden = camp;
+  document.getElementById("list").hidden = camp;
+  document.getElementById("lead").hidden = camp;
+  document.getElementById("t-req").setAttribute("aria-current", camp ? "false" : "page");
+  document.getElementById("t-camp").setAttribute("aria-current", camp ? "page" : "false");
+  renderPicker(cur);
+  renderList(cur);
+  if (cur) document.getElementById("list").scrollIntoView();
+}
+window.addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>
